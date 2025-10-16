@@ -1,55 +1,108 @@
-// pages/blog.tsx
 
-import React from "react";
+import React, { useState } from "react";
+import Head from "next/head";
+import styles from "../styles/FindMe.module.css"; // Assuming you'll add some CSS for styling
 
-// Define the type for the blog post
-type BlogPost = {
-  title: string;
-  date: string;
-  content: string;
-};
+const FindMePage: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-// Sample blog posts
-const blogPosts: BlogPost[] = [
-  {
-    title: "How to Build a Blog with Next.js",
-    date: "October 15, 2025",
-    content:
-      "In this post, we'll explore how to build a simple blog using Next.js and TypeScript. It’s easy to get started, and Next.js makes it fast and scalable.",
-  },
-  {
-    title: "Why TypeScript is the Future of JavaScript",
-    date: "October 14, 2025",
-    content:
-      "TypeScript brings static typing to JavaScript, making it easier to write reliable code and avoid common errors. In this post, we'll dive into the benefits of using TypeScript.",
-  },
-  {
-    title: "Understanding React Hooks",
-    date: "October 12, 2025",
-    content:
-      "React hooks allow you to use state and lifecycle features in functional components. In this post, we'll explore what hooks are and how to use them effectively.",
-  },
-];
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Email: ${email}\nMessage: ${message}`);
+    // You can handle form submission to a backend or email service here
+  };
 
-const BlogPage: React.FC = () => {
   return (
-    <div>
-      <h1>Welcome to the Blog</h1>
-      <p>Latest blog posts on web development and Next.js.</p>
+    <>
+      <Head>
+        <title>Find Me - Contact and Location</title>
+        <meta
+          name="description"
+          content="Find me page with contact form and location"
+        />
+      </Head>
+      <div className={styles.container}>
+        <section className={styles.header}>
+          <h1>Find Me</h1>
+          <p>
+            Looking for me? Here’s how you can get in touch or find my location.
+          </p>
+        </section>
 
-      <div>
-        {blogPosts.map((post, index) => (
-          <div key={index} style={{ marginBottom: "20px" }}>
-            <h2>{post.title}</h2>
-            <p>
-              <strong>{post.date}</strong>
-            </p>
-            <p>{post.content}</p>
+        <section className={styles.contact}>
+          <h2>Contact Form</h2>
+          <form onSubmit={handleSubmit} className={styles.form}>
+            <div className={styles.formGroup}>
+              <label htmlFor="email">Your Email</label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className={styles.formGroup}>
+              <label htmlFor="message">Your Message</label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" className={styles.submitBtn}>
+              Send Message
+            </button>
+          </form>
+        </section>
+
+        <section className={styles.location}>
+          <h2>My Location</h2>
+          <p>Here's where you can find me:</p>
+          <div className={styles.map}>
+            {/* Replace with a real map (Google Maps, Mapbox, etc.) */}
+            <p>Map would be displayed here.</p>
           </div>
-        ))}
+        </section>
+
+        <section className={styles.socialMedia}>
+          <h2>Follow Me</h2>
+          <ul>
+            <li>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
-    </div>
+    </>
   );
 };
 
-export default BlogPage;
+export default FindMePage;
+
