@@ -1,4 +1,3 @@
-// pages/find-me.tsx
 
 import React, { useState } from "react";
 import Head from "next/head";
@@ -106,3 +105,4 @@ const FindMePage: React.FC = () => {
 };
 
 export default FindMePage;
+
