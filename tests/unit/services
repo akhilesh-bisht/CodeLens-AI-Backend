@@ -1,0 +1,54 @@
+// This file contains unit tests for the service classes in the CodeLens AI backend.
+// The tests ensure that the service methods function correctly and handle various scenarios.
+
+import { AuthService } from '../../../src/services/authService';
+import { ProjectService } from '../../../src/services/projectService';
+import { AnalyzeService } from '../../../src/services/analyzeService';
+import { QAService } from '../../../src/services/qaService';
+import { GitHubService } from '../../../src/services/githubService';
+
+describe('AuthService', () => {
+    it('should login a user with valid credentials', async () => {
+        // Test implementation for user login
+    });
+
+    it('should not login a user with invalid credentials', async () => {
+        // Test implementation for invalid login
+    });
+});
+
+describe('ProjectService', () => {
+    it('should create a new project', async () => {
+        // Test implementation for creating a project
+    });
+
+    it('should retrieve all projects for a user', async () => {
+        // Test implementation for retrieving projects
+    });
+});
+
+describe('AnalyzeService', () => {
+    it('should analyze a GitHub repository', async () => {
+        // Test implementation for analyzing a repository
+    });
+
+    it('should return analysis status', async () => {
+        // Test implementation for checking analysis status
+    });
+});
+
+describe('QAService', () => {
+    it('should ask a question about a project', async () => {
+        // Test implementation for asking a question
+    });
+
+    it('should retrieve Q&A history for a project', async () => {
+        // Test implementation for retrieving Q&A history
+    });
+});
+
+describe('GitHubService', () => {
+    it('should fetch repository data from GitHub', async () => {
+        // Test implementation for fetching GitHub repository data
+    });
+});

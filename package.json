@@ -1,0 +1,58 @@
+{
+  "name": "codelens-ai-backend",
+  "version": "1.0.0",
+  "description": "Backend API for CodeLens AI application implementing MVC pattern with TypeScript.",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "ts-node-dev src/app.ts",
+    "test": "jest",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/codelens-ai-backend.git"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "mvc",
+    "api"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.15.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^8.3.2",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "rate-limiter-flexible": "^2.2.0",
+    "sequelize": "^6.37.8",
+    "sequelize-typescript": "^2.1.6",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.8",
+    "@types/express-rate-limit": "^5.1.3",
+    "@types/express-validator": "^2.20.33",
+    "@types/jest": "^26.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^14.14.31",
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.0",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.1.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
