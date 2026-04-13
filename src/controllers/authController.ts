@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { AuthService } from '../services/authService';
-import { User } from '../models/User';
+import { IUser } from '../models/User';
 
 export class AuthController {
     private authService: AuthService;
@@ -66,7 +66,7 @@ export class AuthController {
     // Get current user information
     public async getCurrentUser(req: Request, res: Response): Promise<Response> {
         try {
-            const user: User = await this.authService.getCurrentUser(req.user.id);
+            const user: IUser = await this.authService.getCurrentUser(req.user.id);
             return res.status(200).json({
                 success: true,
                 user,
