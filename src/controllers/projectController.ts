@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import ProjectService from '../services/projectService';
-import { Project } from '../models/Project';
+import {ProjectService} from '../services/projectService';
+import  Project  from '../models/Project';
 
 class ProjectController {
     private projectService: ProjectService;
