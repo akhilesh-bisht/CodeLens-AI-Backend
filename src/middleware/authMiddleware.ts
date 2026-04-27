@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/User';
-import { RequestWithUser } from '../types/api';
+import { LoginRequest } from '../types/api';
 
 // Middleware to authenticate users based on JWT tokens
 export const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFunction) => {
