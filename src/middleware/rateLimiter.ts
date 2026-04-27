@@ -9,9 +9,9 @@ const rateLimiter = rateLimit({
     if (req.path.startsWith('/analyze')) {
       return 5; // Limit to 5 requests per hour for analysis requests
     } else if (req.path.startsWith('/qa')) {
-      return 50; // Limit to 50 requests per hour for Q&A requests
+      return 50; 
     }
-    return 1000; // Limit to 1000 requests per hour for general API calls
+    return 1000; 
   },
   message: {
     success: false,
